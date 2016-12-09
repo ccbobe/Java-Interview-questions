@@ -470,3 +470,120 @@ D.跨越网络,硬件，操作系统平台的应用或服务可通过中间件�
 执行中间件的一个关键途径是信息传递。通过中间件，应用程序可以工作于多平台或OS环境。
 （简单来说，中间件并不能提高内核的效率，一般只是负责网络信息的分发处理）
 </PRE>
+<PRE>
+static String str0="0123456789";
+static String str1="0123456789";
+String str2=str1.substring(5);
+String str3=new String(str2);
+String str4=new String(str3.toCharArray());
+str0=null;
+<H4>29.假定str0,...,str4后序代码都是只读引用。
+Java 7中，以上述代码为基础，在发生过一次FullGC后，上述代码在Heap空间（不包括PermGen）保留的字符数为（）</H4>
+A.5
+
+B.10
+
+C.15
+
+D.20
+
+正确答案: C   
+substring实际是new，5字符
+str3和4也都是new，每个5字符
+分别都会创建新的对象
+常量池是PermGen的
+因此应该是一共15字符 
+</PRE>
+<PRE>
+<H4>30.下面哪种情况会导致持久区jvm堆内存溢出？</H4>
+A.循环上万次的字符串处理
+
+B.在一段代码内申请上百M甚至上G的内存
+
+C.使用CGLib技术直接操作字节码运行，生成大量的动态类
+
+D.不断创建对象
+
+正确答案: C 
+简单的来说 java的堆内存分为两块:permantspace（持久带） 和 heap space。
+持久带中主要存放用于存放静态类型数据，如 Java Class, Method 等， 与垃圾收集器要收集的Java对象关系不大。
+而heapspace分为年轻带和年老带 
+年轻代的垃圾回收叫 Young GC， 年老代的垃圾回收叫 Full GC。
+在年轻代中经历了N次（可配置）垃圾回收后仍然存活的对象，就会被复制到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象
+年老代溢出原因有  循环上万次的字符串处理、创建上千万个对象、在一段代码内申请上百M甚至上G的内存，既A B D选项
+持久代溢出原因  动态加载了大量Java类而导致溢出 
+</PRE>
+<PRE>
+<H4>31.下列关于JAVA多线程的叙述正确的是（）</H4>
+A.调用start()方法和run()都可以启动一个线程
+
+B.CyclicBarrier和CountDownLatch都可以让一组线程等待其他线程
+
+C.Callable类的call()方法可以返回值和抛出异常
+
+D.新建的线程调用start()方法就能立即进行运行状态
+
+正确答案: C  
+
+CyclicBarrier的字面意思是可循环使用（Cyclic）的屏障（Barrier）。
+它要做的事情是，让一组线程到达一个屏障（也可以叫做同步点时被阻塞），直到最后一个线程到达屏障时，屏障才会开门，
+所有被屏障拦截的线程才会继续执行。
+CountDownLatch允许一个或多个线程等待其他线程操作完成。
+</PRE>
+<PRE>
+<H4>32.以下集合对象中哪几个是线程安全的？( )</H4>
+A.ArrayList
+
+B.Vector
+
+C.Hashtable
+
+D.Stack
+
+正确答案: B C D
+在集合框架中，有些类是线程安全的，这些都是jdk1.1中的出现的。在jdk1.2之后，就出现许许多多非线程安全的类。 下面是这些线程安全的同步的类：
+vector：就比arraylist多了个同步化机制（线程安全），因为效率较低，现在已经不太建议使用。在web应用中，特别是前台页面，往往效率（页面响应速度）是优先考虑的。
+statck：堆栈类，先进后出
+hashtable：就比hashmap多了个线程安全
+enumeration：枚举，相当于迭代器
+除了这些之外，其他的都是非线程安全的类和接口。 
+</PRE>
+<PRE>
+<H4>33.关于PreparedStatement与Statement描述错误的是（）</H4>
+A.一般而言，PreparedStatement比Statement执行效率更高
+
+B.PreparedStatement会预编译SQL语句
+
+C.Statement每次都会解析/编译SQL，确立并优化数据获取路径
+
+D.Statement执行扫描的结果集比PreparedStatement大
+
+正确答案: D
+</PRE>
+<PRE>
+<H4>34.下面有关java final的基本规则，描述错误的是？</H4>
+A.final修饰的类不能被继承
+
+B.final修饰的成员变量只允许赋值一次，且只能在类方法赋值
+
+C.final修饰的局部变量即为常量，只能赋值一次。
+
+D.final修饰的方法不允许被子类覆盖
+
+正确答案: B 
+final修饰的成员变量为基本数据类型是，在赋值之后无法改变。当final修饰的成员变量为引用数据类型时，
+在赋值后其指向地址无法改变，但是对象内容还是可以改变的。
+final修饰的成员变量在赋值时可以有三种方式。1、在声明时直接赋值。2、在构造器中赋值。3、在初始代码块中进行赋值。 
+</PRE>
+<PRE>
+<H4>35.java接口的方法修饰符可以为？(忽略内部接口)</H4>
+A.private
+
+B.protected
+
+C.final
+
+D.abstract
+
+正确答案: D 
+</PRE>
