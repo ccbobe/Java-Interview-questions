@@ -253,3 +253,15 @@ D.Map
 
 正确答案: D
 </pre>
+<PRE>
+<H4>16.在J2EE中，使用Servlet过滤器，需要在web.xml中配置（）元素(多选)</H4>
+A.&lt;filter>
+
+B.&lt;filter-mapping>
+
+C.&lt;servlet-filter>
+
+D.&lt;filter-config>
+
+正确答案: A B 
+</PRE>
