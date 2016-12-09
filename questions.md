@@ -163,3 +163,93 @@ D.一个类可以实现多个接口，但只能继承一个抽象类。
 
 正确答案: A B D
 </pre>
+<pre>
+<h4>11.下列Java代码中的变量a、b、c分别在内存的____存储区存放。</h4> 
+class A {
+    private String a = “aa”;
+    public boolean methodB() {
+        String b = “bb”;
+        final String c = “cc”;
+    }
+}
+
+A.堆区、堆区、堆区
+
+B.堆区、栈区、堆区
+
+C.堆区、栈区、栈区
+
+D.堆区、堆区、栈区
+
+E.静态区、栈区、堆区
+
+F.静态区、栈区、栈区
+
+正确答案: C 
+</pre>
+<pre>
+<h4>12.有关下述Java代码描述正确的选项是____。 </h4>
+public class TestClass {
+   private static void testMethod(){
+        System.out.println("testMethod");
+   }
+   public static void main(String[] args) {
+        ((TestClass)null).testMethod();
+   }
+}
+
+A.编译不通过
+
+B.编译通过，运行异常，报NullPointerException
+
+C.编译通过，运行异常，报IllegalArgumentException
+
+D.编译通过，运行异常，报NoSuchMethodException
+
+E.编译通过，运行异常，报Exception
+
+F.运行正常，输出testMethod
+
+正确答案: F  
+</pre>
+<PRE>
+<H4>13.下列不属于算法结构的是（）</H4>
+A.输入数据
+
+B.处理数据
+
+C.存储数据
+
+D.输出结果
+
+正确答案: C
+算法包括0个或多个输入，1个或多个输出，中间有穷个处理过程。
+存储结构不属于算法结构
+</PRE>
+<PRE>
+<H4>14.下列说法正确的有（ ）(多选)</H4>
+A.环境变量可在编译source code时指定
+
+B.在编译程序时，所能指定的环境变量不包括class path
+
+C.javac一次可同时编译数个Java源文件
+
+D.javac.exe能指定编译结果要置于哪个目录（directory）
+
+正确答案: A C D 
+a选项-d即可设置系统属性
+c选项一次编译多个java文件用javac *.java. 即可编译当前目录下的所有java文件
+d选项－s指定存放生成的源文件的位置 
+</PRE>
+<pre>
+<h4>15.以下哪个不是Collection的子接口？</h4>
+A.List
+
+B.Set
+
+C.SortedSet
+
+D.Map
+
+正确答案: D
+</pre>
