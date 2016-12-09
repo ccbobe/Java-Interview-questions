@@ -265,3 +265,93 @@ D.&lt;filter-config>
 
 正确答案: A B 
 </PRE>
+<pre>
+<h4>17.JAVA反射机制主要提供了以下哪些功能？(多选)</h4>
+A.在运行时判断一个对象所属的类
+
+B.在运行时构造一个类的对象
+
+C.在运行时判断一个类所具有的成员变量和方法
+
+D.在运行时调用一个对象的方法
+
+正确答案: A B C D 
+</pre>
+<pre>
+<h4>18.下面有关java实例变量,局部变量,类变量和final变量的说法，错误的是？</h4>
+A.实例变量指的是类中定义的变量，即成员变量，如果没有初始化，会有默认值。
+
+B.部变量指的是在方法中定义的变量，如果没有初始化，会有默认值
+
+C.量指的是用static修饰的属性
+
+D.nal变量指的是用final 修饰的变量
+
+正确答案: B
+定义在类中的变量是类的成员变量，可以不进行初始化，Java会自动进行初始化，如果是引用类型默认初始化为null,如果是基本类型例如int则会默认初始化为0
+局部变量是定义在方法中的变量，必须要进行初始化，否则不同通过编译
+被static关键字修饰的变量是静态的，静态变量随着类的加载而加载，所以也被称为类变量
+被final修饰发变量是常量 
+</pre>
+<PRE>
+<H4>19.个hibernate延迟加载，说法错误的是？</H4>
+A.bernate2延迟加载实现：a)实体对象 b)集合（Collection）
+
+B.bernate3 提供了属性的延迟加载功能
+
+C.t支持延迟加载，load不支持延迟加
+
+D.bernate使用Java反射机制，而不是字节码增强程序来实现透明性
+
+正确答案: C 
+</PRE>
+<pre>
+<h4>20.计中，类的成员变量要求仅仅能够被同一package下的类访问，请问应该使用下列哪个修饰词（）</h4>
+A.protected
+
+B.public
+
+C.private
+
+D.不需要任何修饰词
+
+正确答案: D  
+</pre>
+<pre>
+<h4>一般情况下，以下哪个选项不是关系数据模型与对象模型之间匹配关系？</h4>
+A.表对应类
+
+B.记录对应对象
+
+C.表的字段对应类的属性
+
+D.表之间的参考关系对应类之间的依赖关系
+
+正确答案: D 
+</pre>
+<PRE>
+<H4>以下代码输出的是： </H4>
+public class SendValue{
+    public String str="6";
+    public static void main(String[] args) {
+        SendValue sv=new SendValue();
+        sv.change(sv.str);
+        System.out.println(sv.str);
+    }
+    public void change(String str) {
+        str="10";
+    }
+}
+
+A.6
+
+B.10
+
+C.都不对
+
+D.16
+
+正确答案: A 
+ Java中String类型变量是immutable（不可变的）。
+尽管 change()方法中的str与sv.str都是新的对象实例成员变量值"6"的引用， 由于String类型的 不可变 性，change()方法中的str="10"语句实际上是将传入的str副本引用指向了一个值为“10”的新的内存地址，但 原数据引用 sv.str的引用值（也就是“6”的内存地址） 并没有发生改变，因此sv.str指向的值仍旧为6. 
+</PRE>
